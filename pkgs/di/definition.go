@@ -1,13 +1,15 @@
 package di
 
 type Definition struct {
-	service     *Service
-	constructor *Constructor
+	tag         *Tag
+	constructor any
+	value       any
 }
 
-func NewDefinition(service *Service, constructor *Constructor) *Definition {
+func NewDefinition(tag *Tag, constructor any, value any) *Definition {
 	return &Definition{
-		service:     service,
+		tag:         tag,
 		constructor: constructor,
+		value:       value,
 	}
 }
