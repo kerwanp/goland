@@ -34,7 +34,7 @@ func (r *Router) Router(path string, router *Router) *Router {
 }
 
 func (r *Router) Service(service *di.Tag, constructor any) *Router {
-	r.container.ProvideConstructor(service, constructor)
+	r.container.Provide(service, constructor)
 	return r
 }
 

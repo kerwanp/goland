@@ -18,8 +18,8 @@ func NewContainer() *Container {
 	}
 }
 
-// ProvideConstructor and attach a constructor to a tag
-func (c *Container) ProvideConstructor(tag *Tag, constructor any) *Container {
+// Provide and attach a constructor to a tag
+func (c *Container) Provide(tag *Tag, constructor any) *Container {
 	definition := NewDefinition(tag, constructor, nil)
 	c.definitions[tag.Id()] = definition
 	return c
